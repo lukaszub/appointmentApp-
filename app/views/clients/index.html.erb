@@ -1,0 +1,9 @@
+<%@client.each do |c|%>
+<p><%= c.first_name %></p>
+<p><%= c.second_name %></p>
+<p><%= c.contact_number %></p>
+<%= link_to 'edit', edit_client_path(c) %>
+<%= link_to 'delete', client_path(c), method: :delete, data: { confirm: 'Are you sure?'} %>
+<%= link_to 'view' , client_path(c) %>
+<hr>
+<% end %>

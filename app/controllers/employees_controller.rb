@@ -1,10 +1,10 @@
 class EmployeesController < ApplicationController
 	def new
-		@employee = current_user.employee.build
+		@employee = current_user.employees.build
 	end
 
 	def create
-		@employee = current_user.employee.build(employee_params)	
+		@employee = current_user.employees.build(employee_params)	
 		if @employee.save
 			flash[:success] = "Employee created!"
 			redirect_to root_url
