@@ -1,0 +1,20 @@
+<%= form_for(@appointment) do |f| %>
+	<%= render "devise/shared/error_messages", resource: @appointment %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date, class: 'form-control', autofocus: true %>
+
+  <%= f.label :time %>
+  <%= f.time_field :time, class: 'form-control'  %>
+
+  <%= select "appointment","slot", options_for_select([1,2,3,4,5], params[:slot].to_i) %>
+
+  <%= select "appointment","client_id", options_from_collection_for_select(Client.where(user_id: current_user),
+                                                                           'id', 'name', params[:client_id].to_i) %> 
+
+  <%= select "appointment","employee_id", options_from_collection_for_select(Employee.where(user_id: current_user), 
+                                                                           'id', 'name', params[:employee_id].to_i) %>  
+
+  <%= f.submit 'Create', class: "btn btn-primary" %>
+
+<% end %>

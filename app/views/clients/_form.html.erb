@@ -2,11 +2,8 @@
 <%= form_for(@client) do |f| %>
 	<%= render "devise/shared/error_messages", resource: @client %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name, class: 'form-control', autofocus: true %>
-
-  <%= f.label :second_name %>
-  <%= f.text_field :second_name, class: 'form-control'  %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', autofocus: true %>
 
   <%= f.label :email %>
   <%= f.email_field :email, class: 'form-control' %>

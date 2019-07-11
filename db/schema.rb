@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_123032) do
+ActiveRecord::Schema.define(version: 2019_07_11_091258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
-    t.time "start_of_appointment"
-    t.time "end_of_appointment"
+    t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "client_id"
     t.bigint "employee_id"
     t.bigint "user_id"
+    t.integer "slot"
+    t.time "end_of_appointment"
     t.index ["client_id"], name: "index_appointments_on_client_id"
     t.index ["employee_id"], name: "index_appointments_on_employee_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string "first_name"
-    t.string "second_name"
+    t.string "name"
     t.string "email"
     t.string "contact_number"
     t.datetime "created_at", null: false
@@ -41,8 +41,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_123032) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.string "first_name"
-    t.string "second_name"
+    t.string "name"
     t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
