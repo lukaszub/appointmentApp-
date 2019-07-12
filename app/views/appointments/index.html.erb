@@ -2,5 +2,16 @@
 <% @appointment.each do |a| %>
 <p><%= a.date %></p>
 <p><%= a.time %></p>
+<p><%= a.end_of_appointment %></p>
+<%= link_to 'edit', edit_appointment_path(a) %>
+<%= link_to 'delete', appointment_path(a), method: :delete, data: { confirm: 'Are you sure?'} %>
+<hr>
+<% end %>
+
+<hr>
+<hr>
+<% @appointemts.each do |x| %>
+<p><%= x.time %></p>
+<p><%= x.end_of_appointment %></p>
 <hr>
 <% end %>
