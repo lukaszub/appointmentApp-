@@ -1,0 +1,16 @@
+<h2>Appoinment:</h2>
+
+<p>Client name:</p>
+<h4><%= @appointment.client.name %></h4>
+
+<p>Employee name:</p>
+<h4><%= @appointment.employee.name %></h4>
+
+<p>Date:</p>
+<h4><%= @appointment.date.strftime("%d-%m-%Y") %></h4>
+
+<p>Start of appointment:</p>
+<h4><%= @appointment.date.strftime("%H:%M") %></h4>
+
+<p>End of appointment:</p>
+<h4><%= @appointment.end_of_appointment.strftime("%H:%M") %></h4>

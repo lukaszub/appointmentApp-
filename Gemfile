@@ -62,3 +62,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'

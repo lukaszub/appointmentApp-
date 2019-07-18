@@ -6,7 +6,6 @@ class AppointmentsController < ApplicationController
 	end
 
 	def index
-		@appointemts = Appointment.all
   	@appointment = Appointment.where(user_id: current_user)  
   end
 
@@ -18,6 +17,9 @@ class AppointmentsController < ApplicationController
 			flash.now[:alert] = "choose appointment time is not available"
 			render 'new'
 		end
+	end
+
+	def show
 	end
 
 	def edit
@@ -40,7 +42,7 @@ class AppointmentsController < ApplicationController
 	private
 
 			def appointment_params
-				params.require(:appointment).permit(:date, :time, :end_of_appointment, :slot, :client_id, :employee_id)	
+				params.require(:appointment).permit(:date, :time, :end_of_appointment, :slot, :client_id, :employee_id, :description)	
 			end
 
 			def set_appointment
